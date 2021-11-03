@@ -1,5 +1,4 @@
-use std::collections::HashSet;
-use std::cmp;
+use std::{collections::HashSet, cmp};
 use rand::{thread_rng, Rng, seq::SliceRandom};
 use itertools::Itertools;
 use crate::{Prover, Verifier, run_interactive_proof};
