@@ -1,4 +1,4 @@
-mod graph;
+pub mod graph;
 
 pub trait Prover {
     type ProverMessage;
@@ -34,6 +34,11 @@ pub fn run_interactive_proof<T, U>(prover: &mut dyn Prover<ProverMessage = T, Ve
         let x = verifier.handle(&prover_msg);
         verifier_msg = x.0;
         accept = x.1;
+    }
+    if accept {
+        println!("Proof accepted.");
+    } else {
+        println!("Proof rejected.")
     }
 
     accept
