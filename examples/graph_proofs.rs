@@ -2,6 +2,11 @@ use zklib::{graph::{GraphPair, GNIProver, GNIVerifier, Graph}, run_interactive_p
 use zklib::graph::{GNIProverMalicious, GIVerifier, GIProverMalicious};
 
 fn main() {
+    println!("\n===========================================");
+    println!("-------------------------------------------");
+    println!("\nGRAPH PROTOCOLS\n");
+    println!("-------------------------------------------");
+    println!("===========================================");
     let gni_instance = GraphPair {
         g0: Graph::new(4, vec![(0, 1), (1, 2), (1, 3), (0, 3), (3, 0)]),
         g1: Graph::new(4, vec![(0, 2), (2, 3), (1, 3), (2, 1), (3, 0)]),
@@ -10,7 +15,7 @@ fn main() {
         g0: Graph::new(4, vec![(0, 1), (1, 2), (1, 3), (0, 3), (3, 0)]),
         g1: Graph::new(4, vec![(2, 1), (1, 0), (1, 3), (2, 3), (3, 2)]),
     };
-    println!("GNI interactive proof with honest prover");
+    println!("\nGNI interactive proof with honest prover");
     println!("===========================================");
     let mut gni_prover = GNIProver{
         sent_guess: false,
@@ -59,4 +64,5 @@ fn main() {
         instance: &gni_instance,
     };
     run_interactive_proof(&mut gi_malicious_prover, &mut gi_malicious_verifier);
+    println!();
 }
