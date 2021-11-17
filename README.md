@@ -1,6 +1,6 @@
 # zklib
 
-Rust implementations of zero knowledge proofs, commitment schemes, and other cryptographic protocols, as well as examples of honest and malicious provers.
+Rust implementations of zero knowledge proofs, commitment schemes, and other cryptographic protocols.
 
 ## Setup
 
